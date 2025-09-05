@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness And Health</title>
+
+    <link rel="stylesheet" href="/css/fitness-and-health-calorie-tracker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-and-logo">
+
+            <h1><a href="/">Fitness And Health</a></h1>
+            <a href="/"><img src="/images/logo1.png" width="50px" height="50px"></a>
+        </div>
+        <nav>
+           <ul>
+                    <li>
+                         <p><a href="/calculator">Калкулатор</a></p>
+                    </li>
+                   <li>
+                        <p><a href="/tracker">Тракер</a></p>
+                   </li>
+                    <li id="username">
+                        <p><%= user.username %></p>                        
+                    </li>                    
+                </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="calendar-container">
+            <p>Дневна доза макронотриенти:</p>
+            <input type="date" id="date" name="date">
+        </div>
+        <div class="macronutrient-container">
+            <div class="green-box">
+                <p>Калории</p>
+                <p>kcal</p>
+            </div>
+            <div class="green-box">
+                <p>Въглехидрати</p>
+                <p>g</p>
+            </div>
+            <div class="green-box">
+                <p>Мазнини</p>
+                <p>g</p>
+            </div>
+            <div class="green-box">
+                <p>Протеини</p>
+                <p>g</p>
+            </div>
+            <div class="green-box">
+                <p>Натрии</p>
+                <p>mg</p>
+            </div>
+            <div class="green-box">
+                <p>Захари</p>
+                <p>g</p>
+            </div>
+        </div>
+        <div class="meals-menu">
+            <div class="daily-meals-container">
+                <div class="breakfast-container">
+                    <h1>Закуска</h1>
+                    <p><a href="#">Добави храна</a></p>
+                </div>
+                <div class="breakfast-container">
+                    <h1>Обяд</h1>
+                    <p><a href="#">Добави храна</a></p>
+                </div>
+                <div class="breakfast-container">
+                    <h1>Вечеря</h1>
+                    <p><a href="#">Добави храна</a></p>
+                </div>
+                <div class="breakfast-container">
+                    <h1>Допълнително</h1>
+                    <p><a href="#">Добави храна</a></p>
+                </div>
+            </div>
+            <div class="food-search-bar">
+                <label for="quantity">Количество:</label>
+                <input type="number" id="quantity" name="quantity" min="1" step="1" placeholder="г." required>
+                <form id="food-search-form">                   
+                    <input type="search" id="search-food" placeholder="Напиши храна тук"><i class="fa-solid fa-circle-info"></i>         
+                </form>
+                <div class="food-search-btns">
+                    <button id="add-food-button">Добави</button>
+                    <button id="clear-food-button">Изчисти</button>
+                </div>
+                <div class="food-bar-info">
+                    <div class="food-bar-info-boxes">
+                        <p>Порция</p>
+                        <p id="serving-qnty">0</p>
+                    </div>
+                    <div class="food-bar-info-boxes">
+                        <p>Калории</p>
+                        <p id="calories-qnty">0</p>
+                    </div>
+                    <div class="food-bar-info-boxes">
+                        <p>Въглехидрати</p>
+                        <p id="carbohydrates-qnty">0</p>
+                    </div>
+                    <div class="food-bar-info-boxes">
+                        <p>Мазнини</p>
+                        <p id="fats-qnty">0</p>
+                    </div>
+                    <div class="food-bar-info-boxes">
+                        <p>Протеини</p>
+                        <p id="proteins-qnty">0</p>
+                    </div>
+                    <div class="food-bar-info-boxes">
+                        <p>Натрии</p>
+                        <p id="sodiums-qnty">0</p>
+                    </div>
+                    <div class="food-bar-info-boxes">
+                        <p>Захари</p>
+                        <p id="sugars-qnty">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nutrition-table">
+            <table>
+                <tr>
+                    <td class="first">Общо</td>
+                    <td><%= (user.dailyCalorieGoal || 0).toFixed(2) %></td>
+                    <td><%= (user.carbohydrates || 0).toFixed(2) %></td>
+                    <td><%= (user.fats || 0).toFixed(2) %></td>
+                    <td><%= (user.proteins || 0).toFixed(2) %></td>
+                    <td><%= (user.sodiums || 0).toFixed(2) %></td>
+                    <td><%= (user.sugars || 0).toFixed(2) %></td>
+
+                </tr>
+                <tr>
+                    <td class="first">Дневен прием</td>
+                    <td><%= ((user.dailyCalorieGoal - user.remainingCalories) || 0).toFixed(2) %></td>
+                    <td><%= (user.carbohydrates || 0).toFixed(2) %></td>
+                    <td><%= (user.fats || 0).toFixed(2) %></td>
+                    <td><%= (user.proteins || 0).toFixed(2) %></td>
+                    <td><%= (user.sodiums || 0).toFixed(2) %></td>
+                    <td><%= (user.sugars || 0).toFixed(2) %></td>
+
+                </tr>
+                <tr>
+                    <td class="first">Оставащи</td>
+                    <td><%= (user.remainingCalories || 0).toFixed(2) %></td>
+                    <td><%= (user.carbohydrates || 0).toFixed(2) %></td>
+                    <td><%= (user.fats || 0).toFixed(2) %></td>
+                    <td><%= (user.proteins || 0).toFixed(2) %></td>
+                    <td><%= (user.sodiums || 0).toFixed(2) %></td>
+                    <td><%= (user.sugars || 0).toFixed(2) %></td>
+
+                </tr>
+                <tr class="nutrition-table-rows">
+                    <td class="empty-table-row"></td>
+                    <td>Калории</td>
+                    <td>Въглехидрати</td>
+                    <td>Мазнини</td>
+                    <td>Протеини</td>
+                    <td>Натрии</td>
+                    <td>Захари</td>
+                </tr>
+            </table>
+        </div>
+        <div class="info-text">
+                        <p>Избери количествотоо на храната която си избрал. След това напиши храната отдолу на английски език. След това натисни enter.</p>
+        </div>
+        <ul class="profile-hidden-info">
+            <li>
+                <p><a href="/profile">Профил</a></p>
+            </li>
+            <li>
+                <p><a href="/logout">Излез</a></p>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <div class="footer-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <p>©2024 All rights reserved.</p>
+    </footer>
+</body>
+
+<script src="/js/fitness-and-health-calorie-tracker.js"></script>
+</html>

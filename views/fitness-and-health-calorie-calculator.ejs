@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness And Health</title>
+ 
+    <link rel="stylesheet" href="/css/fitness-and-health-calorie-calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-and-logo">
+            <h1><a href="/">Fitness And Health</a></h1>
+            <a href="/"><img src="/images/logo1.png" width="50px" height="50px"></a>
+        </div>
+        <nav>
+            <ul>
+                    <li>
+                         <p><a href="/calculator">Калкулатор</a></p>
+                    </li>
+                   <li>
+                        <p><a href="/tracker">Тракер</a></p>
+                   </li>
+                    <li id="username">
+                        <p><%= user.username %></p>
+                    </li>                    
+                </ul>
+        </nav>
+    </header>
+    <main>
+      <div class="main-headig">
+            <h1>Calorie Calculator</h1>
+        </div>
+        <div class="calorie-calculator-container">
+            <label for="age">Години</label>
+            <input id="age" type="text" name="age" placeholder="години:14-85" min="14" max="85" required>
+            <div class="gender-buttos">
+                <p>Пол</p>
+                <div class="inner-gender-container">
+                    <input  type="radio" name="sex" id="sexm" value="Male" checked>
+                    <label for="sexm">мъж</label>
+                    <input  type="radio" name="sex" id="sexf" value="Female">
+                    <label for="sexf">жена</label>
+                </div>
+            </div> 
+            <label for="height">Височина</label>    
+            <input id="height" type="text" placeholder="cm" name="height"><br>
+            <label for="weight">Тегло</label>
+            <input id="weight" type="text" placeholder="kg" name="weight"><br>
+            <label for="activity">Ниво на активност</label>
+            <select id="activity">
+                <option value="">------Избери нивото си на активност------</option>
+                <option value="sedentary">Заседнал начин на живот почти никаква</option>
+                <option value="light">От 1 до 3 пъти в седмицата леки упръжнения у дома или разходки</option>
+                <option value="moderate">Умерена активност, тренировки от 4 до 5 дена седмично в залата или у дома</option>
+                <option value="active">Активен начин ан живот, включващ интензивни кардио тренировки от 3 до 4 дена седмично</option>
+                <option value="very-active">Интензивни кардио тренировки всеки ден или по 6 пъти в седмицата</option>
+                <option value="extra-active">Екстра активен начин на живот, включващ екстремно интензивни тренировки</option>
+            </select>
+            <button id="calculate">Изчисли</button>
+            <button id="clear">Изтрий</button>
+            <div class="calculated-results">
+                <div class="maintaining-calories">
+                    <h2>Подържащи калории: </h2>
+                    <p>1234</p>
+                    <a href="#" class="add-btn" data-calories="2200">Добави</a>
+                </div>
+                <div class="mild-weight-loss">
+                    <h2>Бавно горене на мазнини: </h2>
+                    <p>1234</p>
+                    <a href="#" class="add-btn" data-calories="2200">Добави</a>
+                </div>
+                <div class="normal-weight-loss">
+                    <h2>Средно горене на мазнини: </h2>
+                    <p>1234</p>
+                    <a href="#" class="add-btn" data-calories="2200">Добави</a>
+                </div>
+                <div class="extreme-weight-loss">
+                    <h2>Екстремно горене на мазнини: </h2>
+                    <p>1234</p>
+                    <a href="#" class="add-btn" data-calories="2200">Добави</a>
+                </div>
+            </div>
+        </div>
+        <div class="calorie-convert-header">
+            <h1>Calorie Convert</h1>
+        </div>
+        <div class="calorie-convert-container">
+            <input type="text" id="fconvert" placeholder="1">
+            <select id="fconvert-options">
+                <option value="calorie">calorie [cal]</option>
+                <option value="kilojoules">Kilojoules [KJ]</option>
+                <option value="joules">joules [J]</option>
+            </select>
+            <p>=</p>
+            <p id="answear"></p>
+            <select id="sconvert-options">
+                <option value="calorie">calorie [cal]</option>
+                <option value="kilojoules">Kilojoules [KJ]</option>
+                <option value="joules">joules [J]</option>
+            </select>
+        </div>
+        <ul class="profile-hidden-info">
+            <li>
+                <p><a href="/profile">Профил</a></p>
+            </li>
+            <li>
+                <p><a href="/logout">Излез</a></p>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <div class="footer-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <p>©2024 All rights reserved.</p>
+    </footer>
+</body>
+
+<script src="/js/fitness-and-health-calorie-calculator.js"></script>
+</html>

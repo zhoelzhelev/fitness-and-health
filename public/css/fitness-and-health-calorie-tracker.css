@@ -1,0 +1,231 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+} 
+a{
+    color: inherit;
+    text-decoration: none;
+}
+html{
+    font-family: "Roboto Slab", serif;
+}
+header{
+    background-color: rgb(52, 218, 52);
+    padding: 30px 50px;
+    color: white;
+    display: flex;
+    gap: 1000px;
+}
+.header-and-logo{
+    display: flex;
+    gap:5px;
+    font-weight: 500;
+}
+header nav{
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    position: relative;
+    top: 13px;
+}
+.calendar-container{
+    display: flex;
+    gap: 20px;
+    color: rgb(59, 207, 59);
+    margin: 30px 60px;
+    font-size: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid grey;
+}
+.calendar-container input{
+    background-color: #1b5e20;
+    border: none;
+    width: 250px;
+    color: white;
+    padding: 10px;
+    display: none;
+}
+.macronutrient-container{
+    display: flex;
+    gap:2px;
+}
+.green-box{
+    background-color: rgb(59, 207, 59);
+    color: white;
+    height: 60px;
+    padding: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    position: relative;
+    left: 300px;
+}
+.daily-meals-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.breakfast-container{
+    margin: 0px 60px;
+    border-bottom: 2px solid #EEE;
+    padding-bottom: 10px;
+    min-width: 840px;
+}
+.breakfast-container h1{
+    font-size: 25px;
+    color: rgb(57, 174, 57);
+    margin-bottom: 20px;
+}
+.breakfast-container p{
+    font-size: 15px;
+    color: rgb(59, 207, 59);
+}
+.additional-green-box{
+    font-size: small;
+    margin-bottom: 30px;
+    right: 650px !important;
+}
+td{
+    background-color: #EEE;
+    padding: 10px 20px;
+}
+.first{
+    background-color: #FFF;
+}
+.nutrition-table{
+    margin-top: 30px;
+    position: relative;
+    left: 200px;
+}
+footer{
+    background-color: rgb(52, 218, 52);
+    display: flex;
+    color: white;
+    padding: 20px;
+    gap: 730px;
+    margin-top: 30px;
+}
+.footer-icons{
+    font-size: 20px;
+}
+.empty-table-row{
+    background-color: #FFF !important;
+  }
+  .nutrition-table-rows td{
+    background-color: rgb(52, 218, 52);
+    color: white;
+  }
+
+.meals-menu{
+    display: flex;
+    gap: 200px;
+    
+}
+.food-search-bar{
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    bottom: 60px;
+}
+
+
+#food-search-form input{
+    height: 30px;
+    width: 500px;
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+
+}
+
+.food-search-btns button{
+    background-color: rgb(52, 218, 52);
+    color: #FFF;
+    height: 30px;
+    width: 250px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+
+}
+.food-bar-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.food-bar-info-boxes{
+    display: flex;
+    gap: 5px;
+}
+
+.food-bar-info-boxes p{
+    background-color: rgb(52, 218, 52);
+    color: #FFF;
+    height: 50px;
+    width: 250px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+header nav ul li ul{
+    display: none;
+}
+
+header nav ul li:hover ul{
+    display: block;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#quantity{
+
+    max-width: 100px;
+}
+
+.fa-circle-info{
+    color:rgb(52, 218, 52);
+    position: relative;
+    right: 20px;
+}
+
+.info-text{
+    display: none;
+    background-color: #1b5e20;
+    color: #FFF;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    left: 1360px;
+    bottom: 870px;
+}
+
+.info-text::after {
+  content: "";
+  position: absolute;
+  bottom: -13px;  
+  left: 280px;     
+  border-width: 15px 10px 0;   
+  border-style: solid;
+  border-color: #1b5e20 transparent transparent transparent;
+}
+
+.profile-hidden-info{
+    display: none;
+    position: relative;
+    bottom: 820px;
+    background-color: #1b5e20;
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #FFF;
+    gap: 5px;
+    flex-direction: column;
+    left: 1600px;
+    list-style: none;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness And Health</title>
+
+    <link rel="stylesheet" href="/css/fitness-and-health.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-and-logo">
+            <h1><a href="/">Fitness And Health</a></h1>
+            <a href="/"><img src="/images/logo1.png" width="50px" height="50px" alt="Logo"></a>
+        </div>
+        <nav>
+            <% if (user) {%>
+                <ul>
+                    <li>
+                         <p><a href="/calculator">Калкулатор</a></p>
+                    </li>
+                   <li>
+                        <p><a href="/tracker">Тракер</a></p>
+                   </li>
+                    <li id="username">
+                        <p ><%= user.username %></p>
+                    </li>                    
+                </ul>
+                
+            <%} else { %>
+                <p><a href="/register">Създай</a></p>
+                <p style="margin-left: 5px;"><a href="/login">Влез</a></p>
+            <% } %>    
+        </nav>
+    </header>
+
+    <main>
+        <div class="bg-image-container">
+            <h1>
+                Влез в по добра форма.<br>
+                Изпробвай нашия калориен калкулатор.<br>
+                След това след калориният си прием като диетолог.
+            </h1>
+            <div class="bg-image-buttons">
+                <% if(user) { %>
+                    <button class="calorie-calculator-button">
+                        <a href="/calculator">Калкулатор ></a>
+                    </button>
+                    <button class="calorie-tracker-button">
+                        <a href="/tracker">Тракер ></a>
+                    </button>
+                    
+                <%} else { %>
+                    <button class="calorie-calculator-button">
+                        <a href="/register">Създай ></a>
+                    </button>
+                    <button class="calorie-tracker-button">
+                        <a href="/login">Влез ></a>
+                    </button>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="about-us-container">
+            <img src="/images/fruit-heart.jpg" width="500px" height="500px" alt="Fruit Heart">
+            <div class="about-us-paragraphs">
+                <h1>Кои сме ние?</h1>
+                <p>
+                    Fitness And Health е първият калориен калкулатор в България. Направен специално за хора, които искат да влезнат във добра форма.
+                    Калкулаторът е подходящ както за запалени фитнес ентусиасти, така и за начинаещи.
+                    След като калкулаторът изчисли дневния ти прием на калории, можеш да следиш какво вкарваш в тялото си, като използваш нашия Calorie Tracker.
+                    Освен калориите, Tracker показва протеините, въглехидратите и мазнините във всяко ядене.
+                </p>
+            </div>
+        </div>
+        <ul class="profile-hidden-info">
+            <li>
+            
+                <p><a href="/profile">Профил</a></p>
+            </li>
+            <li>
+            
+                <p><a href="/logout">Излез</a></p>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="footer-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <p>©2024 All rights reserved.</p>
+    </footer>
+</body>
+
+<script src="/js/fitness-and-health.js"></script>
+</html>

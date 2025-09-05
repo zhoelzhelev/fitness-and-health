@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/profile.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-and-logo">
+            <h1><a href="/">Fitness And Health</a></h1>
+            <a href="/"><img src="/images/logo1.png" width="50px" height="50px"></a>
+        </div>
+        <nav>
+            <ul>
+                    <li>
+                         <p><a href="/calculator">Калкулатор</a></p>
+                    </li>
+                   <li>
+                        <p><a href="/tracker">Тракер</a></p>
+                   </li>
+                    <li id="username">
+                        <p><%= user.username %></p>
+                    </li>                    
+                </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="profile-main-container">
+            <p><%= user.username %> Информация:</p>
+            <div class="profile-inner-container">
+                <p>Email: <%= user.email %></p>
+                <p>Въглехидрати: <%= user.carbohydrates.toFixed(2) %></p>
+                <p>Мазнини: <%= user.fats.toFixed(2) %></p>
+                <p>Протеини: <%= user.proteins.toFixed(2) %></p>
+                <p>Натрии: <%= user.sodiums.toFixed(2) %></p>
+                <p>Захари: <%= user.sugers.toFixed(2) %></p>
+                <p>Калории за деня: <%= user.dailyCalorieGoal.toFixed(2) %></p>
+                <p>Оставащи калории: <%= user.remainingCalories.toFixed(2) %></p>
+
+            </div>
+        </div>
+
+        <ul class="profile-hidden-info">
+            <li>
+                <p><a href="/profile">Профил</a></p>
+            </li>
+            <li>
+                <p><a href="/logout">Излез</a></p>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="footer-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <p>©2024 All rights reserved.</p>
+    </footer>
+</body>
+
+<script src="/js/fitness-and-health.js"></script>
+</html>
